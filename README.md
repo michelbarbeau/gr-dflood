@@ -6,7 +6,7 @@ and:
 A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using distance to sink information in underwater networks," Underwater Communications and Networking (UComms), 2014, Sestri Levante, 2014, pp. 1-5. 
 
 # Copyright 2016 Michel Barbeau, Carleton University.
-# Version: April 25, 2016
+# Version:May 8, 2016
 
 ## Installing 
 
