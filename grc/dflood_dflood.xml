@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<block>
+  <name>DFLOOD</name>
+  <key>dflood_dflood</key>
+  <category>dflood</category>
+  <import>import dflood</import>
+  <make>dflood.dflood(
+  $addr, $my_sink_addr, $broadcast_interval, $errors_to_file, $data_to_file, 
+  $Tmin, $Tmax, $Ndupl, $Plt, $Slt, $R, $debug, $FEC
+  )
+</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Address</name>
+    <key>addr</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>My sink address</name>
+    <key>my_sink_addr</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Broadcast interval (ms)</name>
+    <key>broadcast_interval</key>
+    <value>30</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Errors to file</name>
+    <key>errors_to_file</key>
+    <value>False</value>
+    <type>enum</type>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Data to file</name>
+    <key>data_to_file</key>
+    <value>False</value>
+    <type>enum</type>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Minimum packet forwarding delay (s)</name>
+    <key>Tmin</key>
+    <value>5</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Maximum packet forwarding delay (s)</name>
+    <key>Tmax</key>
+    <value>65</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Maximum number of duplicates</name>
+    <key>Ndupl</key>
+    <value>2</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Life time of a packet table entry (s)</name>
+    <key>Plt</key>
+    <value>120</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Life time of a sink table entry (s)</name>
+    <key>Slt</key>
+    <value>50</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Robustness factor</name>
+    <key>R</key>
+    <value>2</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Debug mode</name>
+    <key>debug</key>
+    <value>False</value>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+  </param>
+  <param>
+    <name>FEC mode</name>
+    <key>FEC</key>
+    <value>None</value>
+    <type>enum</type>
+    <option>
+      <name>None</name>
+      <key>None</key>
+    </option>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+ <sink>
+    <name>from_radio</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <sink>
+    <name>from_app</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <sink>
+    <name>ctrl_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+ <source>
+    <name>to_radio</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>to_app</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <doc>
+The module implements the protocol originally described in:
+R. Otnes and S. Haavik, "Duplicate reduction with adaptive backoff for a flooding-based underwater network protocol," OCEANS - Bergen, 2013 MTS/IEEE, Bergen, 2013, pp. 1-6.
+and:
+A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using distance to sink information in underwater networks," Underwater Communications and Networking (UComms), 2014, Sestri Levante, 2014, pp. 1-5. 
+  </doc>
+</block>

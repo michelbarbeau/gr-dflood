@@ -1,0 +1,22 @@
+
+Generating: "/home/michel/gr-dflood/examples/top_block.py"
+>>> Warning: This flow graph may not have flow control: no audio or RF hardware blocks found. Add a Misc->Throttle block to your flow graph to avoid CPU congestion.
+
+Executing: "/home/michel/gr-dflood/examples/top_block.py"
+
+0:in send_sink_pkt(): sending sink packet:
+PROT ID: 1 (SINK_PROTO) SRC: 0 SN: 0 HC: 0
+1:in _radio_rx(): receiving packet:
+PROT ID: 1 (SINK_PROTO) SRC: 0 SN: 0 HC: 0
+handler caught exception: not enough arguments for format string
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gnuradio/gr/gateway.py", line 73, in eval
+    try: self._callback(arg)
+  File "/usr/local/lib/python2.7/dist-packages/dflood/dflood.py", line 203, in radio_rx
+    self._radio_rx(data, meta_dict)
+  File "/usr/local/lib/python2.7/dist-packages/dflood/dflood.py", line 273, in _radio_rx
+    self.addr, data[self.PKT_SRC])
+TypeError: not enough arguments for format string
+thread[thread-per-block[2]: <block dflood (1)>]: caught unrecognized exception
+
+>>> Done
