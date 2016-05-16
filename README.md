@@ -10,7 +10,7 @@ A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using 
 
 ## Installing 
 
-`git clone https://github.com/michelbarbeau/gr-dlood`
+`git clone https://github.com/michelbarbeau/gr-dflood`
 
 ## Building
 
