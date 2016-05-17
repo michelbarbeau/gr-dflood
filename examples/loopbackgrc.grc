@@ -1,27 +1,11 @@
-<?xml version='1.0' encoding='ASCII'?>
-<?grc format='1' created='3.7.5'?>
+<?xml version='1.0' encoding='utf-8'?>
+<?grc format='1' created='3.7.9'?>
 <flow_graph>
   <timestamp>Sun May  8 23:30:49 2016</timestamp>
   <block>
     <key>options</key>
     <param>
-      <key>id</key>
-      <value>top_block</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value></value>
-    </param>
-    <param>
       <key>author</key>
-      <value></value>
-    </param>
-    <param>
-      <key>description</key>
       <value></value>
     </param>
     <param>
@@ -29,12 +13,56 @@
       <value>1280, 1024</value>
     </param>
     <param>
+      <key>category</key>
+      <value>Custom</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>description</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(24, 27)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
       <key>generate_options</key>
       <value>wx_gui</value>
     </param>
     <param>
-      <key>category</key>
-      <value>Custom</value>
+      <key>hier_block_src_path</key>
+      <value>.:</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>top_block</value>
+    </param>
+    <param>
+      <key>max_nouts</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>qt_qss_theme</key>
+      <value></value>
+    </param>
+    <param>
+      <key>realtime_scheduling</key>
+      <value></value>
+    </param>
+    <param>
+      <key>run_command</key>
+      <value>{python} -u {filename}</value>
     </param>
     <param>
       <key>run_options</key>
@@ -45,43 +73,23 @@
       <value>True</value>
     </param>
     <param>
-      <key>max_nouts</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>realtime_scheduling</key>
+      <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
-      <key>alias</key>
+      <key>title</key>
       <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(24, 27)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
     </param>
   </block>
   <block>
     <key>variable</key>
     <param>
-      <key>id</key>
-      <value>samp_rate</value>
+      <key>comment</key>
+      <value></value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>32000</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -91,71 +99,23 @@
       <key>_rotation</key>
       <value>0</value>
     </param>
-  </block>
-  <block>
-    <key>dflood_dflood</key>
     <param>
       <key>id</key>
-      <value>dflood_dflood_0</value>
+      <value>samp_rate</value>
     </param>
     <param>
-      <key>_enabled</key>
-      <value>True</value>
+      <key>value</key>
+      <value>32000</value>
     </param>
-    <param>
-      <key>addr</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>my_sink_addr</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>broadcast_interval</key>
-      <value>30</value>
-    </param>
-    <param>
-      <key>errors_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>data_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>Tmin</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>Tmax</key>
-      <value>65</value>
-    </param>
-    <param>
-      <key>Ndupl</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>Plt</key>
-      <value>120</value>
-    </param>
-    <param>
-      <key>Slt</key>
-      <value>50</value>
-    </param>
-    <param>
-      <key>R</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>FEC</key>
-      <value>None</value>
-    </param>
+  </block>
+  <block>
+    <key>blocks_message_debug</key>
     <param>
       <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value></value>
     </param>
     <param>
@@ -163,93 +123,30 @@
       <value></value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(176, 131)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_random_pdu</key>
-    <param>
-      <key>id</key>
-      <value>blocks_random_pdu_0</value>
-    </param>
-    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>minsize</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>maxsize</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>mask</key>
-      <value>0xFF</value>
-    </param>
-    <param>
-      <key>length_modulo</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(720, 331)</value>
+      <value>(552, 321)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_debug_0</value>
     </param>
   </block>
   <block>
     <key>blocks_message_strobe</key>
     <param>
-      <key>id</key>
-      <value>blocks_message_strobe_2_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>10000</value>
-    </param>
-    <param>
       <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
       <value></value>
     </param>
     <param>
@@ -257,315 +154,8 @@
       <value></value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(536, 347)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dflood_dflood</key>
-    <param>
-      <key>id</key>
-      <value>dflood_dflood_1</value>
-    </param>
-    <param>
       <key>_enabled</key>
       <value>True</value>
-    </param>
-    <param>
-      <key>addr</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>my_sink_addr</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>broadcast_interval</key>
-      <value>30</value>
-    </param>
-    <param>
-      <key>errors_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>data_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>Tmin</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>Tmax</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>Ndupl</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>Plt</key>
-      <value>120</value>
-    </param>
-    <param>
-      <key>Slt</key>
-      <value>50</value>
-    </param>
-    <param>
-      <key>R</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>FEC</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(592, 51)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dflood_dflood</key>
-    <param>
-      <key>id</key>
-      <value>dflood_dflood_3</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>addr</key>
-      <value>3</value>
-    </param>
-    <param>
-      <key>my_sink_addr</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>broadcast_interval</key>
-      <value>30</value>
-    </param>
-    <param>
-      <key>errors_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>data_to_file</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>Tmin</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>Tmax</key>
-      <value>65</value>
-    </param>
-    <param>
-      <key>Ndupl</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>Plt</key>
-      <value>120</value>
-    </param>
-    <param>
-      <key>Slt</key>
-      <value>50</value>
-    </param>
-    <param>
-      <key>R</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>FEC</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(992, 187)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_strobe</key>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>20000</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(440, 291)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_strobe</key>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_3</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>20000</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(832, 467)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_strobe</key>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>20000</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -575,34 +165,505 @@
       <key>_rotation</key>
       <value>0</value>
     </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_strobe_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>msg</key>
+      <value>pmt.intern("TEST")</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>20000</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_message_strobe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(496, 229)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_strobe_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>msg</key>
+      <value>pmt.intern("TEST")</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>20000</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_message_strobe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(704, 373)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_strobe_2_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>msg</key>
+      <value>pmt.intern("TEST")</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>10000</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_message_strobe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(864, 413)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_message_strobe_3</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>msg</key>
+      <value>pmt.intern("TEST")</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>20000</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_random_pdu</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>mask</key>
+      <value>0xFF</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(752, 247)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_random_pdu_0</value>
+    </param>
+    <param>
+      <key>length_modulo</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>maxsize</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minsize</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>dflood_dflood</key>
+    <param>
+      <key>addr</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>broadcast_interval</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>debug</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>errors_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>FEC</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(176, 131)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dflood_dflood_0</value>
+    </param>
+    <param>
+      <key>Plt</key>
+      <value>120</value>
+    </param>
+    <param>
+      <key>Slt</key>
+      <value>50</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Ndupl</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>Tmax</key>
+      <value>65</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Tmin</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>my_sink_addr</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>R</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
+    <key>dflood_dflood</key>
+    <param>
+      <key>addr</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>broadcast_interval</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>debug</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>errors_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>FEC</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(680, 0)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dflood_dflood_1</value>
+    </param>
+    <param>
+      <key>Plt</key>
+      <value>120</value>
+    </param>
+    <param>
+      <key>Slt</key>
+      <value>50</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Ndupl</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Tmax</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Tmin</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>my_sink_addr</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>R</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
+    <key>dflood_dflood</key>
+    <param>
+      <key>addr</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>broadcast_interval</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>debug</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>errors_to_file</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>FEC</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1032, 208)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dflood_dflood_3</value>
+    </param>
+    <param>
+      <key>Plt</key>
+      <value>120</value>
+    </param>
+    <param>
+      <key>Slt</key>
+      <value>50</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Ndupl</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>Tmax</key>
+      <value>65</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>Tmin</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>my_sink_addr</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>R</key>
+      <value>0</value>
+    </param>
   </block>
   <connection>
-    <source_block_id>dflood_dflood_0</source_block_id>
-    <sink_block_id>dflood_dflood_1</sink_block_id>
-    <source_key>to_radio</source_key>
-    <sink_key>from_radio</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_message_strobe_3</source_block_id>
-    <sink_block_id>dflood_dflood_3</sink_block_id>
+    <source_block_id>blocks_message_strobe_0</source_block_id>
+    <sink_block_id>dflood_dflood_0</sink_block_id>
     <source_key>strobe</source_key>
     <sink_key>ctrl_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dflood_dflood_1</source_block_id>
-    <sink_block_id>dflood_dflood_3</sink_block_id>
-    <source_key>to_radio</source_key>
-    <sink_key>from_radio</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_message_strobe_1</source_block_id>
     <sink_block_id>dflood_dflood_1</sink_block_id>
-    <source_key>strobe</source_key>
-    <sink_key>ctrl_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_message_strobe_0</source_block_id>
-    <sink_block_id>dflood_dflood_0</sink_block_id>
     <source_key>strobe</source_key>
     <sink_key>ctrl_in</sink_key>
   </connection>
@@ -613,14 +674,38 @@
     <sink_key>generate</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_message_strobe_3</source_block_id>
+    <sink_block_id>dflood_dflood_3</sink_block_id>
+    <source_key>strobe</source_key>
+    <sink_key>ctrl_in</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_random_pdu_0</source_block_id>
     <sink_block_id>dflood_dflood_3</sink_block_id>
     <source_key>pdus</source_key>
     <sink_key>from_app</sink_key>
   </connection>
   <connection>
+    <source_block_id>dflood_dflood_0</source_block_id>
+    <sink_block_id>blocks_message_debug_0</sink_block_id>
+    <source_key>to_app</source_key>
+    <sink_key>print_pdu</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dflood_dflood_0</source_block_id>
+    <sink_block_id>dflood_dflood_1</sink_block_id>
+    <source_key>to_radio</source_key>
+    <sink_key>from_radio</sink_key>
+  </connection>
+  <connection>
     <source_block_id>dflood_dflood_1</source_block_id>
     <sink_block_id>dflood_dflood_0</sink_block_id>
+    <source_key>to_radio</source_key>
+    <sink_key>from_radio</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dflood_dflood_1</source_block_id>
+    <sink_block_id>dflood_dflood_3</sink_block_id>
     <source_key>to_radio</source_key>
     <sink_key>from_radio</sink_key>
   </connection>
