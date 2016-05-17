@@ -36,7 +36,7 @@ sudo ldconfig
 
 ## Running
 
-![Loopback Example](https://github.com/michelbarbeau/gr-dflood/loopbaxk.png)
+![Loopback Example](https://github.com/michelbarbeau/gr-dflood/blob/master/loopback.png)
 
 To run within gnuradio-companion
 
