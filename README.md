@@ -48,4 +48,4 @@ cd gr-dflood/examples
 
 python top_block.py
 
-MOre examples, see: https://github.com/michelbarbeau/gr-splash
+More examples, see: https://github.com/michelbarbeau/gr-splash
