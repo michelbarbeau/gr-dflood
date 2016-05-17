@@ -8,6 +8,8 @@ A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using 
 # Copyright 2016 Michel Barbeau, Carleton University.
 # Version: May 8, 2016
 
+
+
 ## Installing 
 
 `git clone https://github.com/michelbarbeau/gr-dflood`
@@ -33,6 +35,8 @@ sudo ldconfig
 ```
 
 ## Running
+
+![Loopback Example](https://github.com/michelbarbeau/gr-dflood/loopbaxk.png)
 
 To run within gnuradio-companion
 
