@@ -27,7 +27,7 @@
     <type>int</type>
   </param>
   <param>
-    <name>Broadcast interval (ms)</name>
+    <name>Broadcast interval (s)</name>
     <key>broadcast_interval</key>
     <value>30</value>
     <type>int</type>
