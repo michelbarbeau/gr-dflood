@@ -1,4 +1,4 @@
-#  Flooding-based UnderwaterAcoustic Communication Protocol (DFLOOD) Implementation for GNU Radio
+#  Flooding-based Underwater Acoustic Communication Protocol (DFLOOD) Implementation for GNU Radio
 
 The module implements the protocol originally described in:
 R. Otnes and S. Haavik, "Duplicate reduction with adaptive backoff for a flooding-based underwater network protocol," OCEANS - Bergen, 2013 MTS/IEEE, Bergen, 2013, pp. 1-6.
