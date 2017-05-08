@@ -367,7 +367,7 @@
     </param>
     <param>
       <key>maxsize</key>
-      <value>5</value>
+      <value>6</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -375,7 +375,7 @@
     </param>
     <param>
       <key>minsize</key>
-      <value>5</value>
+      <value>6</value>
     </param>
     <param>
       <key>minoutbuf</key>
