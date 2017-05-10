@@ -230,7 +230,9 @@ class dflood(gr.basic_block):
         keylist = []
         for key in self.sinkNeighborTable.keys():
             keylist.append(key[0])
-        return min(keylist)
+        i = keylist.index(min(keylist))
+        minium_key = self.sinkNeighborTable.keys()[i]
+        return [min(keylist), minium_key]
 
     # ------------------------------
     # scan and update the sink table
@@ -511,11 +513,13 @@ class dflood(gr.basic_block):
             time.time(),  # last_time_heard
             nbi)  # new_broadcastinterval
         self.sinkNeighborTable[key] = aSinkNeighborVal
-        if self.addr > self.minium_addr_in_sink_neighbor_table():
-            self.broadcast_interval = self.sinkNeighborTable[key].broadcast_interval
+        minset = self.minium_addr_in_sink_neighbor_table()
+        if self.addr > minset[0]:
+            self.broadcast_interval = self.sinkNeighborTable[minset[1]].broadcast_interval
             sys.stderr.write("%d:in handle_sink_packet(): "
-                             "self broadcast interval changed to %f\n"
-                             % (self.addr, self.broadcast_interval))
+                             "self broadcast interval changed to node %d "
+                             "and broadcast interval now is %f\n"
+                             % (self.addr, minset[0], self.broadcast_interval))
         if self.debug_stderr:
             sys.stderr.write("SN: %d HC: %d HEARD: %d BI: %f\n" %
                              aSinkNeighborVal)
