@@ -72,6 +72,8 @@ class dflood(gr.basic_block):
                  Slt=50,
                  # Robustness factor
                  R=2,
+                 # EMA alpha
+                 EMAalpha=0.8,
                  # debug mode
                  debug=False,
                  # FEC mode,
@@ -107,11 +109,11 @@ class dflood(gr.basic_block):
         self.Plt = Plt
         self.Slt = Slt
         self.R = R
+        self.EMAAlpha = EMAalpha
         self.FEC = FEC
         self.large_backoff = 5
         self.small_backoff = 2.5
         self.low_backoff = 1
-        1
         # message i/o for radio interface
         self.message_port_register_out(pmt.intern('to_radio'))
         self.message_port_register_in(pmt.intern('from_radio'))
@@ -163,7 +165,6 @@ class dflood(gr.basic_block):
         self.pkt_cnt = 0
         # nodesNeighborTable
         self.neighborTable = {}
-        self.emaAlpha = 0.8
         # --- Sink-neighbor table
         self.sinkNeighborTable = {}
         # key
@@ -232,7 +233,10 @@ class dflood(gr.basic_block):
             keylist.append(key[0])
         i = keylist.index(min(keylist))
         minium_key = self.sinkNeighborTable.keys()[i]
-        return [min(keylist), minium_key]
+        bi = self.sinkNeighborTable[minium_key].broadcast_interval
+        # for key in self.sinkNeighborTable.keys():
+        #     sys.stderr.write("addr: %d sinkNeighborTable key SNDR: %d SRC: %d bi: %f\n" %(self.addr, key[0], key[1], bi))
+        return [min(keylist), bi]
 
     # ------------------------------
     # scan and update the sink table
@@ -355,7 +359,7 @@ class dflood(gr.basic_block):
     # -----------------------------------------
     def send_pkt_radio(self, payload, meta_dict, pkt_cnt):
         # sink in Sink table?
-        if not self.SINK_ADDR in self.sinkTable.keys():
+        if self.SINK_ADDR not in self.sinkTable.keys():
             if self.debug_stderr:
                 # yes! log the packet
                 sys.stderr.write(
@@ -492,34 +496,38 @@ class dflood(gr.basic_block):
         # --------------------------------------
         # sink & neighbor in Sink-neighbor table?
         key = (data[self.PKT_SNDR], data[self.PKT_SRC])
-        if not key in self.sinkNeighborTable.keys() and self.debug_stderr:
+        if key not in self.sinkNeighborTable.keys():
             nbi = self.broadcast_interval
-            sys.stderr.write("%d:in handle_sink_packet(): "
-                             "new sink-neighbor entry %s, "
-                             "set newinterval %f\n" %
-                             (self.addr, key, nbi))
-        elif self.debug_stderr:
+            if self.debug_stderr:
+                sys.stderr.write("%d:in handle_sink_packet(): "
+                                 "new sink-neighbor entry %s, "
+                                 "set newinterval %f\n" %
+                                 (self.addr, key, nbi))
+        else:
             lbt = self.sinkNeighborTable[key].last_time_heard
             obi = self.sinkNeighborTable[key].broadcast_interval
-            nbi = 0.8 * obi + 0.2 * (time.time() - lbt)
-            sys.stderr.write("%d:in handle_sink_packet(): "
-                             "updating sink-neighbor entry %s, "
-                             "set newinterval %f\n"
-                             % (self.addr, key, nbi))
+            currenttime = time.time()
+            nbi = self.EMAAlpha * (currenttime - lbt) + (1-self.EMAAlpha) * obi
+            if self.debug_stderr:
+                sys.stderr.write("%d:in handle_sink_packet(): "
+                                 "updating sink-neighbor entry %s, "
+                                 "set newinterval %f\n"
+                                 % (self.addr, key, nbi))
         # create or update a sink-neighbor entry
         aSinkNeighborVal = self.SinkNeighborVal(
             data[self.PKT_SN],  # last_rcvd_seq_nun
             data[self.PKT_HC],  # min_dx_to_sink (hop_counter)
             time.time(),  # last_time_heard
             nbi)  # new_broadcastinterval
-        self.sinkNeighborTable[key] = aSinkNeighborVal
+        self.sinkNeighborTable.update({key: aSinkNeighborVal})
         minset = self.minium_addr_in_sink_neighbor_table()
         if self.addr > minset[0]:
-            self.broadcast_interval = self.sinkNeighborTable[minset[1]].broadcast_interval
-            sys.stderr.write("%d:in handle_sink_packet(): "
-                             "self broadcast interval changed to node %d "
-                             "and broadcast interval now is %f\n"
-                             % (self.addr, minset[0], self.broadcast_interval))
+            self.broadcast_interval = minset[1]
+            if self.debug_stderr:
+                sys.stderr.write("%d:in handle_sink_packet(): "
+                                 "self broadcast interval changed to node %d "
+                                 "and broadcast interval now is %f\n"
+                                 % (self.addr, minset[0], self.broadcast_interval))
         if self.debug_stderr:
             sys.stderr.write("SN: %d HC: %d HEARD: %d BI: %f\n" %
                              aSinkNeighborVal)
@@ -528,7 +536,7 @@ class dflood(gr.basic_block):
         # -----------------------------
         # sink in Sink table?
         key = data[self.PKT_SRC]
-        if not key in self.sinkTable.keys():
+        if key not in self.sinkTable.keys():
             # sink is new! create a sink entry
             aSinkVal = self.SinkVal(
                 data[self.PKT_SN],  # highest_rcvd_seq_num

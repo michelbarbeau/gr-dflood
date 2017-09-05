@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Tue May  9 11:51:45 2017
+# Generated: Fri Sep  1 18:27:16 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -44,16 +44,16 @@ class top_block(grc_wxgui.top_block_gui):
         # Blocks
         ##################################################
         self.dflood_dflood_3 = dflood.dflood(
-          3, 0, 30, False, False, 
-          5, 65, 2, 120, 50, 0, True, None
+          3, 0, 20, False, False,
+          5, 65, 2, 120, 50, 0, 0.8, True, None
           )
         self.dflood_dflood_1 = dflood.dflood(
-          1, 0, 30, False, False, 
-          1, 5, 0, 120, 50, 2, True, None
+          1, 0, 20, False, False,
+          1, 5, 0, 120, 50, 2, 0.8, True, None
           )
         self.dflood_dflood_0 = dflood.dflood(
-          0, 0, 30, False, False, 
-          5, 65, 2, 120, 50, 2, True, None
+          0, 0, 10, False, False,
+          5, 65, 2, 120, 50, 2, 0.8, True, None
           )
         self.blocks_random_pdu_0 = blocks.random_pdu(6, 6, chr(0xFF), 2)
         self.blocks_message_strobe_3 = blocks.message_strobe(pmt.intern("TEST"), 20000)

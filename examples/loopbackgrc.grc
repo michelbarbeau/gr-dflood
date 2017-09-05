@@ -389,12 +389,16 @@
       <value>0</value>
     </param>
     <param>
+      <key>EMAalpha</key>
+      <value>0.8</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>broadcast_interval</key>
-      <value>30</value>
+      <value>10</value>
     </param>
     <param>
       <key>comment</key>
@@ -480,12 +484,16 @@
       <value>1</value>
     </param>
     <param>
+      <key>EMAalpha</key>
+      <value>0.8</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>broadcast_interval</key>
-      <value>30</value>
+      <value>20</value>
     </param>
     <param>
       <key>comment</key>
@@ -571,12 +579,16 @@
       <value>3</value>
     </param>
     <param>
+      <key>EMAalpha</key>
+      <value>0.8</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>broadcast_interval</key>
-      <value>30</value>
+      <value>20</value>
     </param>
     <param>
       <key>comment</key>

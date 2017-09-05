@@ -5,8 +5,8 @@
   <category>dflood</category>
   <import>import dflood</import>
   <make>dflood.dflood(
-  $addr, $my_sink_addr, $broadcast_interval, $errors_to_file, $data_to_file, 
-  $Tmin, $Tmax, $Ndupl, $Plt, $Slt, $R, $debug, $FEC
+  $addr, $my_sink_addr, $broadcast_interval, $errors_to_file, $data_to_file,
+  $Tmin, $Tmax, $Ndupl, $Plt, $Slt, $R, $EMAalpha, $debug, $FEC
   )
 </make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
@@ -97,6 +97,12 @@
     <type>int</type>
   </param>
   <param>
+    <name>BioManagment EMA-Alpha </name>
+    <key>EMAalpha</key>
+    <value>0.8</value>
+    <type>float</type>
+  </param>
+  <param>
     <name>Debug mode</name>
     <key>debug</key>
     <value>False</value>
@@ -120,7 +126,6 @@
       <key>None</key>
     </option>
   </param>
-
   <!-- Make one 'sink' node per input. Sub-nodes:
        * name (an identifier for the GUI)
        * type
@@ -161,6 +166,6 @@
 The module implements the protocol originally described in:
 R. Otnes and S. Haavik, "Duplicate reduction with adaptive backoff for a flooding-based underwater network protocol," OCEANS - Bergen, 2013 MTS/IEEE, Bergen, 2013, pp. 1-6.
 and:
-A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using distance to sink information in underwater networks," Underwater Communications and Networking (UComms), 2014, Sestri Levante, 2014, pp. 1-5. 
+A. Komulainen and J. Nilsson, "Capacity improvements for reduced flooding using distance to sink information in underwater networks," Underwater Communications and Networking (UComms), 2014, Sestri Levante, 2014, pp. 1-5.
   </doc>
 </block>
